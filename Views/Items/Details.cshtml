@@ -1,0 +1,87 @@
+﻿@model TanvirBakery.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Product Details</h2>
+
+<div>
+    <hr />
+    @TempData["success"]
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity) Pices
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="/picture/@Html.DisplayFor(model => model.Image)" alt="#" width="200" length="200"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price) Taka
+        </dd>
+
+        <dt>
+          Brand  @Html.DisplayNameFor(model => model.Brand.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.Name)
+        </dd>
+
+        <dt>
+          Category @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+    </dl>
+
+    @if (Session["is_admin"] != null && !(bool)Session["is_admin"])
+    {
+        <form action="/Items/Buy/@Html.DisplayFor(m=>m.Id)" method="post">
+            <input type="submit" value="Buy Now" />
+        </form>
+    }
+    else if (Session["username"] == null)
+    {
+        <a href="/Account/Login"><button type="button" class="btn btn-danger btn-lg">Buy Now</button></a>
+    }
+
+
+</div>
+<p>
+    @Html.ActionLink("Back to Product", "Index")
+</p>
+
