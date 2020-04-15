@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f8af2d14a2da4a20b75fd7d6740b12f0" Name="Diagram1">
+        <EntityTypeShape EntityType="BakeryModel.Brand" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="BakeryModel.Category" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="BakeryModel.Item" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BakeryModel.PurchaseHistory" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="BakeryModel.User" Width="1.5" PointX="3" PointY="5.125" />
+        <AssociationConnector Association="BakeryModel.FK_Items_Brands" />
+        <AssociationConnector Association="BakeryModel.FK_Items_Categories" />
+        <AssociationConnector Association="BakeryModel.FK_PurchaseHistory_Items" />
+        <AssociationConnector Association="BakeryModel.FK_PurchaseHistory_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
